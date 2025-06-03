@@ -10,7 +10,7 @@ project(boost_container_hash VERSION "${BOOST_SUPERPROJECT_VERSION}" LANGUAGES C
 add_library(boost_container_hash INTERFACE)
 add_library(Boost::container_hash ALIAS boost_container_hash)
 
-target_include_directories(boost_container_hash INTERFACE include)
+target_include_directories(boost_container_hash INTERFACE $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>)
 
 target_link_libraries(boost_container_hash
   INTERFACE
